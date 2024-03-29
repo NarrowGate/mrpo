@@ -1,11 +1,17 @@
 #
-FROM node:14-alpine
+FROM node:alpine
 
 #
-COPY ./ ./
+WORKDIR /usr/app
+
+#
+COPY ./package.json ./
 
 #
 RUN npm install
+
+#
+COPY ./ ./
 
 #docker run -p 8080:8080 image-id
 
