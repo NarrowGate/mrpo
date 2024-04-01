@@ -10,7 +10,7 @@ USER node
 RUN mkdir /home/node/mw
 WORKDIR /home/node/mw
 
-COPY --chown=node:node ./package.json .
+# COPY --chown=node:node ./package.json .
 
 # COPY --chown=node:node ../../.git .
 # COPY --chown=node:node ../../.gitignore .
@@ -25,9 +25,9 @@ COPY --chown=node:node ./package.json .
 
 # WORKDIR /home/node/mw/projects/app-b
 
-RUN npm install
+# RUN npm install
 
 # Set HMR to use polling
-ENV HMR_POLLING_INTERVAL 500
+# ENV HMR_POLLING_INTERVAL 500
 
-CMD ["npm", "run", "remote"]
+# CMD ["npm", "run", "remote"]
