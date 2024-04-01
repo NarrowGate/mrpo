@@ -10,7 +10,7 @@ USER node
 RUN mkdir /home/node/mw
 WORKDIR /home/node/mw
 
-COPY --chown=node:node . .
+COPY --chown=node:node ./package.json .
 
 # COPY --chown=node:node ../../.git .
 # COPY --chown=node:node ../../.gitignore .
