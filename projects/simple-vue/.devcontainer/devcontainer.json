@@ -34,13 +34,4 @@
     "mounts": ["source=${localWorkspaceFolder},target=/home/node/mw,type=bind"],
     // "source=${locaEnv:HOME}/Documents/repos/mrpo/packages,target=/home/node/mw,type=bind"
     "workspaceFolder": "/home/node/mw"
-
-    // Add the IDs of extensions you want installed when the container is created in the array below.
-    // "extensions": [
-    // 	"dbaeumer.vscode-eslint",
-    // 	"octref.vetur",
-    // 	"syler.sass-indented",
-    // 	"ms-azuretools.vscode-docker",
-    // 	"donjayamanne.githistory"
-    // ],
 }
