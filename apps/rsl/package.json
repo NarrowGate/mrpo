@@ -1,0 +1,28 @@
+{
+    "name": "rsl",
+    "version": "1.0.0",
+    "description": "Rsl",
+    "main": "index.html",
+    "scripts": {
+        "dev": "vite --host",
+        "build": "vite build",
+        "preview": "vite preview",
+        "test": "vitest"
+    },
+    "author": "Melvin Wilson",
+    "license": "MIT",
+    "devDependencies": {
+        "@vitejs/plugin-react": "2.1.0",
+        "eslint": "8.24.0",
+        "eslint-config-prettier": "8.5.0",
+        "prettier": "2.7.1",
+        "vite": "3.1.4",
+        "vitest": "0.24.3",
+        "@testing-library/react": "13.4.0",
+        "jsdom": "^22.1.0"
+    },
+    "dependencies": {
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    }
+}

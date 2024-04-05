@@ -1,0 +1,119 @@
+body {
+  background: aliceblue;
+}
+
+h3 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.app-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.companies-wrap {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.company {
+  width: 100%;
+  display: flex;
+  background: #13456a;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.company a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 100%;
+  padding: 1.2rem;
+}
+
+.company.loading,
+.company.loading:hover {
+  background: #d0dbe4;
+}
+
+.company:hover {
+  background: #2c7aa0;
+  cursor: pointer;
+}
+
+.company.loading:hover,
+.company.loading a {
+  cursor: default !important;
+}
+
+.view-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 500px;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  justify-content: flex-start;
+  position: relative;
+}
+
+.view-wrap.jc-center {
+  align-items: center;
+}
+
+.view-single {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.view-img-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.view-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.view-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.tag {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  background: #2c7aa0;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  width: max-content;
+}
