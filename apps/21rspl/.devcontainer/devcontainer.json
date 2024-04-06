@@ -1,7 +1,7 @@
 {
-    "name": "Rsl Container",
+    "name": "21 Responsive Layout Container",
     "dockerFile": "../Dockerfile",
-    "appPort": ["7010:5173"],
+    "appPort": ["7090:5173"],
 
     "customizations": {
         "vscode": {
