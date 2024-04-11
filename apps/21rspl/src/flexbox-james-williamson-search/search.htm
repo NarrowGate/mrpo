@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>short forms</title>
+<link href="_css/base.css" rel="stylesheet" type="text/css" media="screen">
+<style>
+.search-form {
+	width: 80%;
+	margin: 0 auto;
+}
+input[type="search"] {
+	box-sizing: border-box;
+	background: #E9E9E9;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0.35em 0.75em;
+	border: none;
+	font-size: 1.1em;
+	text-decoration: none;
+	line-height: normal;
+	max-height: 3em;
+}
+button[type="submit"] {
+	box-sizing: border-box;
+	border-radius: 0px 2px 2px 0px;
+	background: #8B798C;
+	font-weight: 300;
+	text-transform: uppercase;
+	color: white;
+	padding: 0.35em 0.75em;
+	border: none;
+	font-size: 1.1em;
+	text-decoration: none;
+	cursor: pointer;	
+}
+button[type="submit"]:hover {
+	background: #C17CCF;
+}
+/*flex it*/
+.search-form {
+	display: flex;
+	flex-wrap: wrap;
+}
+input[type="search"] {
+	flex: 2 0 250px;
+}
+button[type="submit"] {
+	flex: 1 0 90px;
+}
+@media (max-width: 450px) {
+body {
+	width: 100%;
+	margin: 0;
+	padding: 1em 0 2em;
+}
+header {
+	padding: 2% 5%;
+}
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Creating Responsive Forms with Flexbox</h1>
+<p><a href="http://www.w3.org/TR/css3-flexbox/" title="Flexbox">Flexible Layout Box Model</a>, better known as <strong>Flexbox</strong>, is a great tool for crafting responsive regions or UI elements. While not well-suited for complete page layouts, Flexbox excels at controlling elements along a single axis or in arranging elements within discreet regions. This makes Flexbox a fantastic tool for creating responsive page elements that are normally tricky to handle, such as forms. Often Flexbox can create responsive components with a minimal amount of code and little to no media queries.</p>
+<h2>Short Forms</h2>
+<p>Our first exercise will focus on the basic concepts of how Flexbox can help create responsive content. We'll start with a basic search form that consists of two elements, a search input and a submit button.</p>
+</header>
+<article class="example">
+<form class="search-form">
+  <input type="search" name="search" placeholder="Search this site" class="search-input">
+  <button type="submit" class="search-btn">Search</button>
+</form>
+</article>
+</body>
+</html>
