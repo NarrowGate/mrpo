@@ -5,4 +5,4 @@ USER node
 RUN mkdir /home/node/mw
 WORKDIR /home/node/mw
 
-RUN npm install
+# RUN npm install

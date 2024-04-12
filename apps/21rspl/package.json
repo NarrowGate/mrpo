@@ -3,7 +3,7 @@
     "private": true,
     "version": "0.0.0",
     "scripts": {
-        "dev": "vite serve ./src/d3 --host",
+        "dev": "vite serve ./src/author-james-williamson/flexbox/search --host",
         "build": "vite build",
         "preview": "vite preview"
     },
