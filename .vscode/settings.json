@@ -1,20 +1,107 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
-    // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+    "workbench.colorTheme": "Serendipity Morning",
+    
+	"vim.normalModeKeyBindings": [
 
-    // List of extensions which should be recommended for users of this workspace.
-    "recommendations": [
-        "esbenp.prettier-vscode",
-        "donjayamanne.githistory",
-        "oderwat.indent-rainbow",
-        "NicholasHsiang.vscode-javascript-snippet",
-        "github.copilot",
-        "teabyii.ayu",
-        "sdras.inbedby7pm",
-        "mvllow.rose-pine",
-        "wicked-labs.wvsc-serendipity",
-        "sdras.night-owl",
-        "fisheva.eva-theme",
-        "vscodevim.vim"
-    ]
+		{
+			"before": ["<leader>", "z"],
+			"commands": ["workbench.action.toggleZenMode"],
+		},
+		{
+			"before": ["<leader>", "s"],
+			"commands": ["workbench.action.toggleSidebarVisibility"],
+		},
+		{
+			"before": ["<leader>", "f"],
+			"after": ["<C-f>"],
+		},
+		{
+			"before": ["<leader>", "b"],
+			"after": ["<C-b>"],
+		},
+		{
+			"before": ["<leader>", "o"],
+			"after": ["<C-o>"],
+		},
+		{
+			"before": ["<leader>", "i"],
+			"after": ["<C-i>"],
+		},
+		{
+			"before": ["<leader>", "r"],
+			"after": ["<C-r>"],
+		},
+ 		{
+			"before": [ "<leader>", "q"],
+			"commands": ["workbench.action.closeActiveEditor"],
+			"when": "editorTextFocus"
+		},
+ 		{
+			"before": [ "[", "b"],
+			"commands": ["workbench.action.previousEditor"],
+			"when": "editorTextFocus"
+		},
+		{
+			"before": ["]", "b"],
+			"commands": ["workbench.action.nextEditor"],
+			"when": "editorTextFocus"
+		},
+		{
+			"before": ["<leader>", "h"],
+			"commands": ["workbench.action.navigateLeft"],
+			"when": "editorTextFocus"
+		},
+		{
+			"before": ["<leader>", "j"],
+			"commands": ["workbench.action.navigateDown"],
+			"when": "editorTextFocus"
+		},
+		{
+			"before": ["<leader>", "l"],
+			"commands": ["workbench.action.navigateRight"],
+			"when": "editorTextFocus"
+		},
+		{
+			"before": ["<leader>", "c"],
+			"commands": ["editor.action.commentLine"],
+			"when": "editorTextFocus"
+		},
+		{
+			"before": ["<leader>", "k"],
+			"commands": ["workbench.action.openQuickChat.copilot"],
+			"when": "editorTextFocus"
+		},		
+		{
+			"before": ["<leader>", "|"],
+			"commands": ["workbench.action.splitEditorRight"],
+			"when": "editorTextFocus"
+		},
+	],
+	"vim.visualModeKeyBindings": [
+		{
+			"before": ["<leader>", "c"],
+			"commands": ["editor.action.commentLine"],
+			"when": "editorTextFocus"
+		}
+	],
+	"vim.insertModeKeyBindings": [
+
+		{
+			"before": ["j", "j"],
+			"after": ["<Esc>"]
+		}
+	],
+	"vim.commandLineModeKeyBindings": [
+
+	],
+	"vim.commandLineModeKeyBindingsNonRecursive": [
+		
+	],
+	"vim.leader": " ",
+	"editor.fontFamily": "Fira Code",
+	"editor.lineNumbers": "relative",
+	"editor.stickyScroll.scrollWithEditor": false,
+	"workbench.tree.enableStickyScroll": false,
+	"editor.fontSize": 18
+
 }

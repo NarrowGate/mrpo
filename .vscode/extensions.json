@@ -1,0 +1,16 @@
+{
+    "recommendations": [
+        "esbenp.prettier-vscode",
+        "donjayamanne.githistory",
+        "oderwat.indent-rainbow",
+        "NicholasHsiang.vscode-javascript-snippet",
+        "github.copilot",
+        "teabyii.ayu",
+        "sdras.inbedby7pm",
+        "mvllow.rose-pine",
+        "wicked-labs.wvsc-serendipity",
+        "sdras.night-owl",
+        "fisheva.eva-theme",
+        "vscodevim.vim"
+    ]
+}
