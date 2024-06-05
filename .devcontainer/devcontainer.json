@@ -21,9 +21,9 @@
     // "workspaceMount": "source=${localWorkspaceFolder},target=/home/node/mw,type=bind",
     "mounts": ["source=${localWorkspaceFolder},target=/home/node/mw,type=bind"],
 
-    // "source=${localWorkspaceFolder}/packages,target=/home/node/mw/packages,type=bind",
-    // "source=${localWorkspaceFolder}/projects,target=/home/node/mw/projects,type=bind"
-    // "source=${localWorkspaceFolder}/.prettierrc/,target=/home/node/mw/.prettierrc,type=bind"
+    "workspaceMount": "source=${localWorkspaceFolder}/packages,target=/home/node/mw/packages,type=bind",
+    "workspaceMount": "source=${localWorkspaceFolder}/projects,target=/home/node/mw/projects,type=bind",
+    "workspaceMount": "source=${localWorkspaceFolder}/.prettierrc/,target=/home/node/mw/.prettierrc,type=bind",
     // "source=${locaEnv:HOME}/Documents/repos/mrpo/packages,target=/home/node/mw,type=bind"
     "workspaceFolder": "/home/node/mw",
 
