@@ -173,6 +173,173 @@
                 <button type="submit" class="btn btn-primary disabled" id="continueBtn">Continue</button>
             </div>
         </form>
+        <form class="new-account-form" id="newAccountForm" enctype="multipart/form-data" method="post" novalidate="novalidate" data-service-url="/rslsitecoreapi/CreateAccount/CreateOrUpdateCheckoutCookieWhoStepNew" data-success-title="" data-success-message="" data-error-message="">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group required-field floating-field">
+                                        <label for="first-name-input-float" class="control-label">
+                                            <span class="floating-label">First name</span>
+                                            <span class="floating-label-error" data-valmsg-for="first-name-input-float" data-valmsg-replace="true"></span>
+                                        </label>
+                                        <input type="text" value="" maxlength="255" id="first-name-input-float" name="first-name-input-float" class="form-control" data-val="true" data-val-regex-pattern="^[^<>{}]*$" data-val-regex="Name contains potentially dangerous characters" data-val-required="First name is required">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group required-field floating-field">
+                                        <label for="last-name-input-float" class="control-label ">
+                                            <span class="floating-label">Last name</span>
+                                            <span class="floating-label-error" data-valmsg-for="last-name-input-float" data-valmsg-replace="true"></span>
+                                        </label>
+                                        <input type="text" value="" maxlength="255" id="last-name-input-float" name="last-name-input-float" class="form-control" data-val="true" data-val-regex-pattern="^[^<>{}]*$" data-val-regex="Name contains potentially dangerous characters" data-val-required="Last name is required">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group required-field floating-field">
+                                        <label for="email-input-float" class="control-label">
+                                            <span class="floating-label">Email address</span>
+                                            <span class="floating-label-error" data-valmsg-for="email-input-float" data-valmsg-replace="true"></span>
+                                        </label>
+                                        <input type="text" value="" maxlength="255" id="email-input-float" name="email-input-float" class="form-control" data-val="true" data-val-regex-pattern="^[\w-+.\&quot;]+@[\w-.]+\.[\w-]+$" data-val-regex="This is not a valid email address" data-val-required="Email is required">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group required-field floating-field floating-field--dirty floating-field--invalid">
+                                        <label for="phone-input-float" class="control-label ">
+                                            <span class="floating-label">Your number</span>
+                                            <span class="floating-label-error field-validation-error" data-valmsg-for="phone-input-float" data-valmsg-replace="true"><span id="phone-input-float-error" class="">Your number is required</span></span>
+                                        </label>
+                                        <input type="text" value="" maxlength="12" id="phone-input-float" name="phone-input-float" class="form-textfield-input account-mobile-phone" data-val="true" data-val-regex-pattern="^(?:\+?61|0)4\)?(?:[ -]?[0-9]){7}[0-9]$" data-val-regex="Invalid number" data-val-required="Your number is required" "="" aria-describedby="Form_AccountContactDetails_0__AccountMobilePhoneNumber-error" aria-invalid="true">
+                                        <span class="help-note">
+                                            We need to contact you if you win!
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    
+                                    <div class="address-list">
+                                <div class="international-address form-row m1-bottom floating-field form-group hidden" data-address-group="0">
+                                    <div class="form-textfield form-textfield-floating-label js-form-textfield">
+                                        <label for="AccountInternationalAddress" class="control-label">
+                                            <span class="floating-label">Address</span>
+                                            <span class="floating-label-error" data-valmsg-for="AccountInternationalAddress" data-valmsg-replace="true"></span>
+                                        </label>
+                                        <input type="text" value="" id="AccountInternationalAddress" name="AccountInternationalAddress" class="form-textfield-input account-address notaustralia-address" data-val="true" data-addresslocationid="002995079" data-description="Postal Address" data-isprimary="true" data-isremoved="" data-val-required="Please enter your Address">
+                                    </div>
+                    
+                                </div>
+                                <div class="domestic-address form-row floating-field form-group" data-address-group="0">
+                                    <div class="form-textfield form-textfield-floating-label js-form-textfield typeahead-container">
+                                        <label for="AccountAddress" class="control-label p0">
+                                            <span class="floating-label">Address</span> 
+                                            <span class="floating-label-error" data-valmsg-for="AccountAddress" data-valmsg-replace="true"></span>
+                                        </label>
+                                        <input type="text" value="" id="AccountAddress" name="AccountAddress" class="form-textfield-input typeahead address-typeahead ui-autocomplete-input valid" data-val="true" data-search-id="" data-typeahead-service="/rslsitecoreapi/AccountDetails/SuggestAddresses" data-val-required="Please enter your Address" data-val-validaddresslookup="Please select an address from the list of options or click the link to input your address manually." autocomplete="off" data-gtm-form-interact-field-id="3" aria-describedby="AccountAddress-error" aria-invalid="false"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                                        <input type="hidden" value="" id="AccountAddressSearchId" name="AccountAddressSearchId" class="address-search-value" data-val="true">
+                    
+                                    <ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="display: none;"></ul></div>
+                    
+                    
+                                </div>
+                                <div class="form-row international-address m1-bottom floating-field form-group hidden" data-address-group="0">
+                                    <div class="international-address-wrapper">
+                                        <div class="form-textfield form-textfield-floating-label js-form-textfield">
+                                        <label for="AccountAddressCity" class="control-label">
+                                            <span class="floating-label">City / suburb</span>
+                                            <span class="floating-label-error" data-valmsg-for="AccountAddressCity" data-valmsg-replace="true"></span>
+                                        </label>
+                                            <input type="text" value="" id="AccountAddressCity" name="AccountAddressCity" class="form-textfield-input account-addresscity fullAddressCity" data-val="true" data-val-required="Please enter your city/suburb">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row international-address aus-state m1-bottom floating-field form-group hidden" data-address-group="0">
+                                    <div class="international-address-wrapper">
+                                        <div class="form-textfield form-textfield-floating-label js-form-textfield empty">
+                                            <label for="AccountAddressState" class="control-label">
+                                                <span class="floating-label">State</span>
+                                                <span class="floating-label-error" data-valmsg-for="AccountAddressState" data-valmsg-replace="true"></span>
+                                            </label>
+                    
+                                            <select name="AccountAddressState" class="form-textfield-input fullAddressState" data-val="true" data-val-required="Please select a state" placeholder="State" id="AccountAddressState">
+                                                <option value="">State</option>
+                                                <option value="Vic">Vic</option>
+                                                <option value="NSW">NSW</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row international-address m1-bottom hidden floating-field form-group" data-address-group="0">
+                                    <div class="international-address-wrapper">
+                                        <div class="form-textfield form-textfield-floating-label js-form-textfield empty">
+                                            <label for="AccountAddressPostCode" class="control-label ">
+                                                <span class="floating-label">Postcode</span>
+                                                <span class="floating-label-error" data-valmsg-for="AccountAddressPostCode" data-valmsg-replace="true"></span>
+                                            </label>
+                                            <input type="text" value="" id="AccountAddressPostCode" name="AccountAddressPostCode" class="form-textfield-input fullAddressPostcode" data-val="true" data-val-required="Please enter your postcode">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row international-address m1-bottom floating-field form-group address-country hidden" data-address-group="0">
+                                    <div class="international-address-wrapper">
+                                        <div class="form-select form-select-floating-label js-form-select empty">
+                                            <label for="AccountAddressCountry" class="control-label">
+                                                <span class="floating-label">Country</span>
+                                                <span class="floating-label-error" data-valmsg-for="AccountAddressCountry" data-valmsg-replace="true"></span>
+                                            </label>
+                                            <select name="AccountAddressCountry" class="form-select-input js-gift-recipient" data-val="true" data-val-required="Please select a country" id="AccountAddressCountry">
+                                                <option value="">Country</option>
+                                                <option value="AFG">Test</option>
+                                                <option value="AUS">Australia</option>
+                                                <option value="ALA">Aland Islands</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row address-lookup" data-address-group="0">
+                                    <p tabindex="1" class="countryAddressCheck m0" id="countryAddressCheck0" data-check-domestic-address="true" data-domestic-address-checked-label="Can’t find your address?" data-domestic-address-unchecked-label="Use our address lookup service"><span tabindex="0">Can’t find your address?</span></p>
+                                </div>
+                            </div>
+                                </div>
+                            </div>
+                            <div class="m10-top btn-container">
+                                <button type="submit" class="btn btn-primary blue-dark go-to-gift m10-bottom" id="newAccountExpandedContinue">Create account
+                                </button>
+                            </div>
+                    
+                        </div>
+                        
+                        <div class="form-group required-field">
+                            <label for="name-input-id" class="control-label ">First name*</label>
+                            <input id="name-input-id" name="name-input-name" class="form-control" type="text" value="" maxlength="255" placeholder="Your First name" data-val-required="Name is required." data-val-regex="Name contains potentially dangerous characters. " data-val-regex-pattern="^[^<>{}]*$" data-val="true">
+                            <span class="field-validation-valid help-block" data-valmsg-for="name-input-name" data-valmsg-replace="true"></span>
+                        </div>
+                    
+                        <div class="form-group required-field">
+                            <label for="last-name-input-id" class="control-label ">Last name*</label>
+                            <input id="last-name-input-id" name="last-name-input-name" class="form-control" type="text" value="" maxlength="255" placeholder="Your Last name" data-val-required="Name is required." data-val-regex="Name contains potentially dangerous characters. " data-val-regex-pattern="^[^<>{}]*$" data-val="true">
+                            <span class="field-validation-valid help-block" data-valmsg-for="last-name-input-name" data-valmsg-replace="true"></span>
+                        </div>
+                    
+                        <div class="form-group required-field">
+                            <label for="email-input-id" class="control-label ">Email address*</label>
+                            <input id="email-input-id" name="email-input" class="form-control" type="text" value="" maxlength="255" placeholder="Your email" data-val-required="Email is required." data-val-regex="" data-val-regex-pattern="^[\w-+.\&quot;]+@[\w-.]+\.[\w-]+$" data-val="true">
+                            <span class="field-validation-valid help-block" data-valmsg-for="email-input" data-valmsg-replace="true"></span>
+                        </div>
+                    
+                    
+                    
+                        <div class="form-continue-btn">
+                            <button type="submit" class="btn btn-primary disabled" id="continueBtn">
+                                Continue
+                            </button>
+                        </div>
+                    </form>
         <script type="module" src="form-valid.js"></script>
     </body>
 </html>
