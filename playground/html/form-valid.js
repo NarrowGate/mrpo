@@ -47,19 +47,26 @@ $(document).ready(function () {
         if (event.type === 'blur') {
             floatingFieldBlurHandler(event)
         } else if (event.type === 'keyup') {
-            let { $el, $form } = getJqElandJqField(event.target)
+            let { $el, $field } = getJqElandJqField(event.target)
             let backspaceOrDelete = ifKeyPressedIsBackspaceOrDelete(event)
 
             if (!backspaceOrDelete) {
-                if ($el.val() !== '') {
-                    runValidationForElement(event)
-                } else {
-                    // debugger
-                    // let rules = $el.rules()
-                    // $form.validate().settings.rules[$el.attr('id')] = {}
-                    // $el.rules('add', rules)
-                    // event.stopImmediatePropagation()
+                if ($el.val().length >= 1) {
+                    let isRegexValid = manuallyCheckIfRegexIsValidForElement($el)
+                    if (!isRegexValid) {
+                        runValidationForElement(event)
+                    }
                 }
+                // else if ($el.val().length > 1) {
+                //                     runValidationForElement(event)
+                //                 }
+                // else {
+                // debugger
+                // let rules = $el.rules()
+                // $form.validate().settings.rules[$el.attr('id')] = {}
+                // $el.rules('add', rules)
+                // event.stopImmediatePropagation()
+                // }
             }
         }
     }
@@ -155,6 +162,17 @@ $(document).ready(function () {
         return event.keyCode === 8 || event.keyCode === 46
     }
 
+    function manuallyCheckIfRegexIsValidForElement($el) {
+        let rules = $el.validate().settings.rules
+        let rulesForId = rules ? rules[$el.attr('id')] : null
+
+        if (rulesForId && rulesForId.regex) {
+            let regex = new RegExp(rulesForId.regex)
+            let value = $el.val()
+            return regex.test(value)
+        }
+    }
+
     $.validator.setDefaults({
         // onKeyup: true,
         onkeyup: false,
@@ -199,12 +217,24 @@ $(document).ready(function () {
             'last-name-input-float': {
                 required: true,
                 regex: /^[^<>{}]*$/
+            },
+            'email-input-float': {
+                required: true,
+                regex: /^[\w-+.\"]+@[\w-.]+\.[\w-]+$/
             }
         },
         messages: {
             'first-name-input-float': {
                 required: 'First name is required',
                 regex: 'Name contains potentially dangerous characters'
+            },
+            'last-name-input-float': {
+                required: 'Last name is required',
+                regex: 'Name contains potentially dangerous characters'
+            },
+            'email-input-float': {
+                required: 'Email is required',
+                regex: 'This is not a valid email address'
             }
         }
     })
