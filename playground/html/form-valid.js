@@ -35,7 +35,8 @@ $(document).ready(function () {
 
     $floatingFormField.find('input, select').on('focus', floatingFieldFocusHandler)
     $floatingFormField.find('input, select').on('blur', validateFloatingField)
-    // $floatingFormField.find('input').on('keyup', validateFloatingField)
+    // $floatingFormField.find('input').on('blur', validateFloatingField)
+    $floatingFormField.find('input').on('keyup', validateFloatingField)
     // $floatingFormField.find("select").on("change", validateFloatingField );
     // $floatingFormField.find("input, select").on("blur, keyup", floatingFieldBlurHandler );
     // $floatingFormField.find("input[type=text]").on("keyup", (e) => {
@@ -47,14 +48,18 @@ $(document).ready(function () {
             floatingFieldBlurHandler(event)
         } else if (event.type === 'keyup') {
             let { $el, $form } = getJqElandJqField(event.target)
-            if ($el.val() !== '') {
-                // runValidationForElement(event)
-            } else {
-                // debugger
-                // let rules = $el.rules()
-                // $form.validate().settings.rules[$el.attr('id')] = {}
-                // $el.rules('add', rules)
-                // event.stopImmediatePropagation()
+            let backspaceOrDelete = ifKeyPressedIsBackspaceOrDelete(event)
+
+            if (!backspaceOrDelete) {
+                if ($el.val() !== '') {
+                    runValidationForElement(event)
+                } else {
+                    // debugger
+                    // let rules = $el.rules()
+                    // $form.validate().settings.rules[$el.attr('id')] = {}
+                    // $el.rules('add', rules)
+                    // event.stopImmediatePropagation()
+                }
             }
         }
     }
@@ -146,14 +151,13 @@ $(document).ready(function () {
         'Invalid input.'
     )
 
+    function ifKeyPressedIsBackspaceOrDelete(event) {
+        return event.keyCode === 8 || event.keyCode === 46
+    }
+
     $.validator.setDefaults({
         // onKeyup: true,
-        onKeyup: function (element) {
-            debugger
-            let { $el, $field, tagName } = getJqElandJqField(element)
-            $el.rules()
-            return true
-        },
+        onkeyup: false,
         //     let { $field, tagName } = getJqElandJqField(element)
         //     if ($field.hasClass('floating-field--focused') && tagName === 'INPUT') {
         //         return true
