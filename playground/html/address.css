@@ -1,0 +1,316 @@
+/*----------------*/
+form {
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+form .lp-form-fieldInput {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+form div.lp-form-field {
+    word-wrap: break-word;
+    word-break: break-word;
+}
+form div.lp-radioButtonsContainer {
+    width: 100%;
+}
+form span.lp-radioButton input {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    margin-top: 3px;
+    border-radius: 50%;
+}
+form div.marketing-customfield input[type='checkbox'],
+form div.marketing-field input[type='checkbox'],
+form div.marketing-subscription-list input {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    margin-top: 3px;
+}
+form span.lp-checkboxListItem,
+form span.lp-radioButton {
+    /* This rule is needed to style all radio button fields. For product constraints each option is defined as input and label wrapped into a span*/
+    display: block;
+    margin: 2px;
+}
+form div[name='gender-identification-div'] {
+    margin-left: 10px;
+}
+
+h3 {
+    font-size: 1rem;
+}
+form *[data-layout='true'] {
+    margin: 0 auto;
+    max-width: /* @layout-max-width */ 600px /* @layout-max-width */;
+}
+
+.lp-required::after {
+    color: #c33400;
+    content: '*';
+}
+
+.dependantdiv {
+    display: none;
+}
+
+.dependantdiv.display {
+    display: block;
+}
+
+.info {
+    font-size: smaller;
+    color: rgb(0, 0, 0);
+}
+form input {
+    border-radius: 3px;
+    border: 1px solid #333333;
+    height: 35px;
+    margin-top: 8px;
+    text-indent: 10px;
+    width: 100%;
+}
+
+.hiddendiv {
+    display: none;
+    min-height: 0;
+}
+
+.hiddendiv.displaydiv {
+    display: block;
+}
+
+.error {
+    padding: 2px;
+    display: none;
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+}
+
+.error.display-error {
+    background: #a72727 !important;
+    padding: 10px !important;
+    border-radius: 0 !important;
+    position: relative;
+    display: inline-block !important;
+    box-shadow: 1px 1px 1px #aaaaaa;
+    margin-top: 10px;
+}
+
+.display-error::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #a72727;
+    position: absolute;
+    top: -10px;
+}
+
+.error input {
+    background: #fff0f4;
+    color: #c51244;
+}
+
+form select {
+    border-radius: 3px;
+    border: 1px solid #333333;
+    height: 35px;
+    margin-top: 8px;
+    text-indent: 10px;
+    width: 100%;
+}
+form textarea {
+    border-radius: 3px;
+    border: 1px solid #333333;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    height: 120px;
+    overflow: auto;
+    width: 100%;
+}
+form label {
+    margin: 0px;
+}
+form button[type='submit'],
+form div[data-editorblocktype='SubmitButtonBlock'] button {
+    font-size: 18px;
+    border-radius: 3px;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    color: white;
+    background-color: #2266e3;
+    border: 1px solid #2266e3;
+    width: 100%;
+    padding: 0;
+}
+form button[type='reset'],
+form div[data-editorblocktype='ResetButtonBlock'] button {
+    font-size: 18px;
+    border-radius: 3px;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    color: #323130;
+    border: 1px solid #8a8886;
+    width: 100%;
+    padding: 0;
+}
+form button[type='submit'],
+form button[type='reset'],
+form div[data-editorblocktype='SubmitButtonBlock'],
+form div[data-editorblocktype='ResetButtonBlock'] {
+    margin: 0 auto;
+}
+
+form button[type='submit'][disabled] {
+    background: darkgrey !important;
+    border: #8a8886;
+}
+
+form .columnContainer h2 {
+    font-size: 16px;
+}
+::-webkit-input-placeholder,
+::-moz-placeholder,
+::-ms-input-placeholder ::placeholder {
+    font-size: 16px;
+}
+form .columnContainer h1 {
+    font-size: 26px;
+}
+
+/** div[data-form-block-id] .lookup-behavior {
+          filter: none !important;
+          border: 1px solid #333333 !important;
+          background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDQ4IDIwNDgiPjxwYXRoIGQ9Ik0xMzQ0IDBxOTcgMCAxODcgMjV0MTY4IDcxIDE0MiAxMTAgMTExIDE0MyA3MSAxNjggMjUgMTg3cTAgOTctMjUgMTg3dC03MSAxNjgtMTEwIDE0Mi0xNDMgMTExLTE2OCA3MS0xODcgMjVxLTEyNSAwLTIzOS00MnQtMjExLTEyMWwtNzg1IDc4NHEtMTkgMTktNDUgMTl0LTQ1LTE5LTE5LTQ1cTAtMjYgMTktNDVsNzg0LTc4NXEtNzktOTYtMTIxLTIxMHQtNDItMjQwcTAtOTcgMjUtMTg3dDcxLTE2OCAxMTAtMTQyVDk4OSA5NnQxNjgtNzEgMTg3LTI1em0wIDEyODBxMTE5IDAgMjI0LTQ1dDE4My0xMjQgMTIzLTE4MyA0Ni0yMjRxMC0xMTktNDUtMjI0dC0xMjQtMTgzLTE4My0xMjMtMjI0LTQ2cS0xMTkgMC0yMjQgNDVUOTM3IDI5NyA4MTQgNDgwdC00NiAyMjRxMCAxMTkgNDUgMjI0dDEyNCAxODMgMTgzIDEyMyAyMjQgNDZ6Ii8+PC9zdmc+);
+          background-repeat: no-repeat;
+          background-position-x: 98%;
+          background-position-y: center;
+          background-size: 1em 1em;
+          filter: drop-shadow(0 0 1px black);
+        }
+  */
+ul.findaddress {
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    border-top: none;
+    list-style: none;
+    padding-left: 0;
+    z-index: 100;
+    margin: 0;
+    position: absolute;
+    max-width: 75%;
+}
+
+ul.findpostaladdress {
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    border-top: none;
+    list-style: none;
+    padding-left: 0;
+    z-index: 100;
+    margin: 0;
+    position: absolute;
+    max-width: 75%;
+}
+
+li.findaddress-item {
+    padding: 0 0.5rem;
+    line-height: 2.5rem;
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+li.findpostaladdress-item {
+    padding: 0 0.5rem;
+    line-height: 2.5rem;
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+li.findaddress-item-active {
+    background: #b2bec5;
+}
+
+li.findpostaladdress-item-active {
+    background: #f4f4f4;
+}
+
+li.findaddress-item span {
+    display: none;
+}
+
+li.findpostaladdress-item span {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    form .columnContainer {
+        width: 100% !important;
+    }
+
+    form .padding-top-only-new-client-10 {
+        padding: 10px 0 0 0 !important;
+    }
+
+    form .padding-y-new-client-10 {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    form .padding-right-new-client-10 {
+        padding-right: 10px !important;
+    }
+
+    form .padding-top-new-client-10 {
+        padding-top: 10px !important;
+    }
+
+    form div[data-editorblocktype='CaptchaBlock'] table,
+    form div[data-editorblocktype='CaptchaBlock'] tr,
+    form div[data-editorblocktype='CaptchaBlock'] td,
+    form div[data-editorblocktype='CaptchaBlock'] tbody,
+    form div[data-editorblocktype='CaptchaBlock'] img[alt='Visual Challenge'] {
+        display: block;
+        width: 100% !important;
+    }
+
+    form div[data-editorblocktype='CaptchaBlock'] td input {
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    ul.findaddress {
+        left: 20px;
+        max-width: 90%;
+        border-top: 1px solid #e3e3e3;
+    }
+
+    form {
+        font-size: 0.8em;
+    }
+
+    form .columnContainer h1 {
+        font-size: 1.25rem !important;
+    }
+
+    .vfwc-page form h2 {
+        font-size: 1rem !important;
+    }
+
+    form div[name='gender-identification-div'] {
+        margin-left: 0px;
+    }
+}

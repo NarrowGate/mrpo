@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "start": "servor . form-valid.html --reload"
+        "start": "servor . address.html --reload"
     },
     "dependencies": {
         "servor": "^4.0.2"
