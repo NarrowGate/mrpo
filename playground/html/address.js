@@ -41,3 +41,38 @@ function makeMessageForRegexField($element) {
     const problematicChar = value.slice(-1)
     return errorMessageTemplate.replace('{}', `"${problematicChar}"`)
 }
+
+function focusFirstInvalidField(e) {
+    var $form = $(e.target)
+    var $firstInvalidField = $form.find('.floating-field--invalid:not(.hidden)').first()
+    if ($firstInvalidField.length) {
+        var inputField = $firstInvalidField.find('input').first()
+        var selectField = $firstInvalidField.find('select')
+
+        if (inputField.length > 0) {
+            inputField.focus()
+        } else if (selectField.length > 0) {
+            selectField.focus()
+            setTimeout(function () {
+                selectField.blur()
+            }, 250)
+        }
+    }
+}
+e.validator.setDefaults({
+    focusInvalid: false,
+    onclick: function (e) {
+        var t = a(e),
+            n = t.$field,
+            i = t.tagName
+        if (n) return 'SELECT' !== i
+    },
+    highlight: function (e) {
+        var t = a(e).$field
+        return t && t.addClass('floating-field--invalid'), !0
+    },
+    unhighlight: function (e) {
+        var t = a(e).$field
+        return t && t.removeClass('floating-field--invalid'), !0
+    }
+})
