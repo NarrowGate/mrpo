@@ -1,0 +1,13 @@
+#ConsentSource {
+    height: 90px !important;
+}
+#ConsentSource td.picklist-cell {
+    padding-bottom: 0 !important;
+}
+fieldset[aria-label='Client Details'] td.cell,
+fieldset[aria-label='Home Address'] td.cell,
+fieldset[aria-label='Postal Address'] td.cell,
+fieldset[aria-label='Connection Details'] td.cell,
+fieldset[aria-label='Consent'] td.cell {
+    padding-left: 0 !important;
+}
