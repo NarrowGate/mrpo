@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "start": "servor . address.html --reload"
+        "start": "servor . braintree.html --reload"
     },
     "dependencies": {
         "servor": "^4.0.2"
