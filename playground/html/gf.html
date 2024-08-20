@@ -1,0 +1,621 @@
+<!--Gift Section newFarm starts  -->
+<form
+    class="gift-new-recipient-form rslau-form"
+    id="giftNewRecipientForm"
+    data-error-title="Oops"
+    data-error-message="Our Server can&#39;t process this at the moment. Please try again in a few minutes. If the error continues, please contact us"
+    data-error-button="Ok"
+    data-service-url="/rslsitecoreapi/giftcheckout/updategiftdetails"
+>
+    <div class="row">
+        <div class="col-md2-6 col-xs-12 col-sm2-12 col-sm-12">
+            <div class="form-group required-field floating-field">
+                <label for="firstName" class="control-label">
+                    <span class="floating-label">First name</span>
+                    <span
+                        class="floating-label-error"
+                        data-valmsg-for="name-input-name"
+                        data-valmsg-replace="true"
+                    ></span>
+                </label>
+                <input
+                    id="firstName"
+                    name="name-input-name"
+                    class="form-control"
+                    type="text"
+                    value=""
+                    maxlength="255"
+                    data-val="true"
+                    data-val-required="First name is required"
+                    data-val-regex="Name contains potentially dangerous characters"
+                    data-val-regex-pattern="^[^<>{}]*$"
+                />
+            </div>
+        </div>
+        <div class="col-md2-6 col-xs-12 col-sm2-12 col-sm-12">
+            <div class="form-group required-field floating-field">
+                <label for="lastName" class="control-label">
+                    <span class="floating-label">Last name</span>
+                    <span
+                        class="floating-label-error"
+                        data-valmsg-for="last-name-input-name"
+                        data-valmsg-replace="true"
+                    ></span>
+                </label>
+                <input
+                    id="lastName"
+                    name="last-name-input-name"
+                    class="form-control"
+                    type="text"
+                    value=""
+                    maxlength="255"
+                    data-val="true"
+                    data-val-required="Last name is required"
+                    data-val-regex="Name contains potentially dangerous characters"
+                    data-val-regex-pattern="^[^<>{}]*$"
+                />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group required-field floating-field">
+                <label for="emailId" class="control-label">
+                    <span class="floating-label">Email address</span>
+                    <span class="floating-label-error" data-valmsg-for="email-input" data-valmsg-replace="true"></span>
+                </label>
+                <input
+                    id="emailId"
+                    name="email-input"
+                    class="form-control"
+                    type="text"
+                    value=""
+                    maxlength="255"
+                    data-val="true"
+                    data-val-required="Email is required"
+                    data-val-regex="This is not a valid email address"
+                    data-val-regex-pattern="^[\w-+.\&amp;quot;]+@[\w-.]+\.[\w-]+$"
+                />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group required-field floating-field">
+                <label for="PhoneNumber" class="control-label">
+                    <span class="floating-label">Phone number</span>
+                    <span class="floating-label-error" data-valmsg-for="PhoneNumber" data-valmsg-replace="true"></span>
+                </label>
+                <input
+                    type="text"
+                    value=""
+                    maxlength="12"
+                    id="PhoneNumber"
+                    name="PhoneNumber"
+                    class="form-textfield-input account-mobile-phone"
+                    data-val="true"
+                    data-rule-auslandlineormobile="true"
+                    data-val-required="Phone number is required"
+                />
+                <span class="help-note"> We will contact you on this number if you win </span>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="form-group required-field">
+        <label for="homePhoneNumber" class="control-label">Home Number</label>
+        <input class="form-textfield-input" 
+               placeholder="0X XXXX XXXX" 
+               data-val="true" 
+               data-val-oneormorephonenumbers="You must provide at least one phone number" 
+               data-val-oneormorephonenumbers-properties="homePhoneNumber,mobilePhoneNumber" 
+               data-val-regex="Please enter a valid Australian home phone number including the area code"
+               data-val-regex-pattern="^(?:\+?61|\(?0)[2378]\)?(?:[ -]?[0-9]){8}$"
+               id="homePhoneNumber" 
+               name="UpdateAccountHomePhoneNumber" 
+               type="tel" 
+               value="">
+        <span class="field-validation-valid" data-valmsg-for="UpdateAccountHomePhoneNumber" data-valmsg-replace="true"></span>
+
+    </div>
+    <div class="form-group required-field">
+        <label for="mobilePhoneNumber" class="control-label" >Mobile phone</label>
+        <input class="form-textfield-input"
+               placeholder="04XX XXX XXX"
+               data-val="true"
+               data-val-oneormorephonenumbers="You must provide at least one phone number"
+               data-val-oneormorephonenumbers-properties="homePhoneNumber,mobilePhoneNumber"
+               data-val-regex="Please enter a valid Australian mobile phone number"
+               data-val-regex-pattern="^(?:\+?61|0)4\)?(?:[ -]?[0-9]){7}[0-9]$"
+               id="mobilePhoneNumber"
+               name="UpdateAccountMobilePhoneNumber"
+               type="tel"
+               value="">
+        <span class="field-validation-valid" data-valmsg-for="UpdateAccountMobilePhoneNumber" data-valmsg-replace="true"></span>
+
+    </div> -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="account-details-container">
+                <div class="address-list">
+                    <div
+                        class="international-address form-row m1-bottom floating-field form-group hidden"
+                        data-address-group="0"
+                    >
+                        <div class="form-textfield form-textfield-floating-label js-form-textfield">
+                            <label for="AccountInternationalAddress" class="control-label">
+                                <span class="floating-label">Address</span>
+                                <span
+                                    class="floating-label-error"
+                                    data-valmsg-for="Form.AccountContactDetails[0].AccountInternationalAddress"
+                                    data-valmsg-replace="true"
+                                ></span>
+                            </label>
+                            <input
+                                value=""
+                                class="form-textfield-input account-address notaustralia-address"
+                                data-addresslocationid=""
+                                data-description="Postal Address"
+                                data-isprimary="true"
+                                data-isremoved=""
+                                data-val="true"
+                                data-val-required="Address is required"
+                                id="Form_AccountContactDetails_0__AccountInternationalAddress"
+                                name="Form.AccountContactDetails[0].AccountInternationalAddress"
+                                type="text"
+                            />
+                        </div>
+                    </div>
+                    <div class="domestic-address form-row floating-field form-group" data-address-group="0">
+                        <div class="form-textfield form-textfield-floating-label js-form-textfield typeahead-container">
+                            <label for="AccountAddress" class="control-label p0">
+                                <span class="floating-label">Address</span>
+                                <span
+                                    class="floating-label-error"
+                                    data-valmsg-for="Form.AccountContactDetails[0].AccountAddress"
+                                    data-valmsg-replace="true"
+                                ></span>
+                            </label>
+                            <input
+                                value=""
+                                address-changed=""
+                                class="form-textfield-input account-address typeahead address-typeahead australia-address ui-autocomplete-input valid"
+                                data-addresslocationid=""
+                                data-description="Postal Address"
+                                data-isprimary="true"
+                                data-isremoved=""
+                                data-search-id=""
+                                data-typeahead-service="/rslsitecoreapi/AccountDetails/SuggestAddresses"
+                                data-val="true"
+                                data-val-required="Address is required"
+                                data-val-validaddresslookup="Please select your address from the list"
+                                id="Form_AccountContactDetails_0__AccountAddress"
+                                name="Form.AccountContactDetails[0].AccountAddress"
+                                type="text"
+                                autocomplete="off"
+                                aria-describedby="Form_AccountContactDetails_0__AccountAddress-error"
+                            />
+
+                            <input
+                                class="address-search-value"
+                                data-val="true"
+                                data-val-required="The Char field is required."
+                                id="Form_AccountAddressSearchId_0_"
+                                name="Form.AccountAddressSearchId[0]"
+                                type="hidden"
+                                value=""
+                            />
+                        </div>
+                    </div>
+
+                    <div class="form-row international-address m1-bottom floating-field hidden" data-address-group="0">
+                        <div class="international-address-wrapper">
+                            <div
+                                class="form-group required-field floating-field form-textfield form-textfield-floating-label js-form-textfield"
+                            >
+                                <label for="Form_AccountContactDetails_0__AccountAddressCity" class="control-label">
+                                    <span class="floating-label">City / suburb</span>
+                                    <span
+                                        class="floating-label-error"
+                                        data-valmsg-for="Form.AccountContactDetails[0].AccountAddressCity"
+                                        data-valmsg-replace="true"
+                                    ></span>
+                                </label>
+                                <input
+                                    value=""
+                                    class="form-textfield-input account-addresscity fullAddressCity"
+                                    data-val="true"
+                                    data-val-required="City / Suburb is required"
+                                    id="Form_AccountContactDetails_0__AccountAddressCity"
+                                    name="Form.AccountContactDetails[0].AccountAddressCity"
+                                    type="text"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="form-row international-address aus-state m1-bottom floating-field hidden"
+                        data-address-group="0"
+                    >
+                        <div class="international-address-wrapper">
+                            <div
+                                class="form-group form-select form-select-floating-label floating-field form-textfield form-textfield-floating-label js-form-textfield empty"
+                            >
+                                <label for="Form_AccountContactDetails_0__AccountAddressState" class="control-label">
+                                    <span class="floating-label">State</span>
+                                    <span
+                                        class="floating-label-error"
+                                        data-valmsg-for="Form.AccountContactDetails[0].AccountAddressState"
+                                        data-valmsg-replace="true"
+                                    ></span>
+                                </label>
+                                <select
+                                    name="Form.AccountContactDetails[0].AccountAddressState"
+                                    class="form-textfield-input fullAddressState"
+                                    data-val="true"
+                                    data-val-required="State is required"
+                                    id="Form_AccountContactDetails_0__AccountAddressState"
+                                >
+                                    <option value=""></option>
+                                    <option value="ACT">Australian Capital Territory</option>
+                                    <option value="NSW">New South Wales</option>
+                                    <option value="NT">Northern Territory</option>
+                                    <option value="QLD">Queensland</option>
+                                    <option value="SA">South Australia</option>
+                                    <option value="TAS">Tasmania</option>
+                                    <option value="VIC">Victoria</option>
+                                    <option value="WA">Western Australia</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="form-row international-address m1-bottom floating-field hidden postcode-field"
+                        data-address-group="0"
+                    >
+                        <div class="international-address-wrapper">
+                            <div
+                                class="form-group form-select-floating-label floating-field form-textfield form-textfield-floating-label js-form-textfield empty"
+                            >
+                                <label for="Form_AccountContactDetails_0__AccountAddressPostCode" class="control-label">
+                                    <span class="floating-label">Postcode</span>
+                                    <span
+                                        class="floating-label-error"
+                                        data-valmsg-for="Form.AccountContactDetails[0].AccountAddressPostCode"
+                                        data-valmsg-replace="true"
+                                    ></span>
+                                </label>
+                                <input
+                                    value=""
+                                    class="form-textfield-input fullAddressPostcode"
+                                    data-val="true"
+                                    data-val-required="Postcode is required"
+                                    id="Form_AccountContactDetails_0__AccountAddressPostCode"
+                                    name="Form.AccountContactDetails[0].AccountAddressPostCode"
+                                    type="text"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="form-row international-address m1-bottom floating-field country-field"
+                        data-address-group="0"
+                    >
+                        <div class="international-address-wrapper">
+                            <div
+                                class="form-group floating-field form-select form-select-floating-label js-form-select empty"
+                            >
+                                <label for="Form_AccountContactDetails_0__AccountAddressCountry" class="control-label">
+                                    <span class="floating-label">Country</span>
+                                    <span
+                                        class="floating-label-error"
+                                        data-valmsg-for="Form.AccountAddressCountry"
+                                        data-valmsg-replace="true"
+                                    ></span>
+                                </label>
+                                <select
+                                    name="Form.AccountAddressCountry"
+                                    class="form-select-input js-gift-recipient"
+                                    data-val="true"
+                                    data-val-required="Country is required"
+                                    id="Form_AccountContactDetails_0__AccountAddressCountry"
+                                >
+                                    <option value=""></option>
+                                    <option value="AFG">Afghanistan</option>
+                                    <option value="ALA">Aland Islands</option>
+                                    <option value="ALB">Albania</option>
+                                    <option value="DZA">Algeria</option>
+                                    <option value="ASM">American Samoa</option>
+                                    <option value="AND">Andorra</option>
+                                    <option value="AGO">Angola</option>
+                                    <option value="AIA">Anguilla</option>
+                                    <option value="ATA">Antarctica</option>
+                                    <option value="ATG">Antigua and Barbuda</option>
+                                    <option value="ARG">Argentina</option>
+                                    <option value="ARM">Armenia</option>
+                                    <option value="ABW">Aruba</option>
+                                    <option value="AUS" selected>Australia</option>
+                                    <option value="AZE">Azerbaijan</option>
+                                    <option value="BHS">Bahamas</option>
+                                    <option value="BHR">Bahrain</option>
+                                    <option value="BGD">Bangladesh</option>
+                                    <option value="BRB">Barbados</option>
+                                    <option value="BLR">Belarus</option>
+                                    <option value="BLZ">Belize</option>
+                                    <option value="BEN">Benin</option>
+                                    <option value="BMU">Bermuda</option>
+                                    <option value="BTN">Bhutan</option>
+                                    <option value="BOL">Bolivia</option>
+                                    <option value="BIH">Bosnia and Herzegovina</option>
+                                    <option value="BWA">Botswana</option>
+                                    <option value="BVT">Bouvet Island</option>
+                                    <option value="BRA">Brazil</option>
+                                    <option value="IOT">British Indian Ocean Territory</option>
+                                    <option value="BRN">Brunei Darussalam</option>
+                                    <option value="BFA">Burkina Faso</option>
+                                    <option value="BDI">Burundi</option>
+                                    <option value="KHM">Cambodia</option>
+                                    <option value="CMR">Cameroon</option>
+                                    <option value="CAN">Canada</option>
+                                    <option value="CPV">Cape Verde</option>
+                                    <option value="CYM">Cayman Islands</option>
+                                    <option value="CAF">Central African Republic</option>
+                                    <option value="TCD">Chad</option>
+                                    <option value="CHL">Chile</option>
+                                    <option value="CHN">China</option>
+                                    <option value="CXR">Christmas Island</option>
+                                    <option value="CCK">Cocos Keeling Islands</option>
+                                    <option value="COL">Colombia</option>
+                                    <option value="COM">Comoros</option>
+                                    <option value="COG">Congo</option>
+                                    <option value="COD">Congo The Democratic Republic of the</option>
+                                    <option value="COK">Cook Islands</option>
+                                    <option value="CRI">Costa Rica</option>
+                                    <option value="CIV">Cote dIvoire</option>
+                                    <option value="CUB">Cuba</option>
+                                    <option value="DJI">Djibouti</option>
+                                    <option value="DMA">Dominica</option>
+                                    <option value="DOM">Dominican Republic</option>
+                                    <option value="ECU">Ecuador</option>
+                                    <option value="EGY">Egypt</option>
+                                    <option value="SLV">El Salvador</option>
+                                    <option value="GNQ">Equatorial Guinea</option>
+                                    <option value="ERI">Eritrea</option>
+                                    <option value="ETH">Ethiopia</option>
+                                    <option value="FLK">Falkland Islands Malvinas</option>
+                                    <option value="FRO">Faroe Islands</option>
+                                    <option value="FJI">Fiji</option>
+                                    <option value="GUF">French Guiana</option>
+                                    <option value="PYF">French Polynesia</option>
+                                    <option value="ATF">French Southern Territories</option>
+                                    <option value="GAB">Gabon</option>
+                                    <option value="GMB">Gambia</option>
+                                    <option value="GEO">Georgia</option>
+                                    <option value="GHA">Ghana</option>
+                                    <option value="GIB">Gibraltar</option>
+                                    <option value="GRL">Greenland</option>
+                                    <option value="GRD">Grenada</option>
+                                    <option value="GLP">Guadeloupe</option>
+                                    <option value="GUM">Guam</option>
+                                    <option value="GTM">Guatemala</option>
+                                    <option value="GGY">Guernsey</option>
+                                    <option value="GIN">Guinea</option>
+                                    <option value="GNB">Guinea-Bissau</option>
+                                    <option value="GUY">Guyana</option>
+                                    <option value="HTI">Haiti</option>
+                                    <option value="HMD">Heard Island and McDonald Islands</option>
+                                    <option value="VAT">Holy See Vatican City State</option>
+                                    <option value="HND">Honduras</option>
+                                    <option value="HKG">Hong Kong</option>
+                                    <option value="ISL">Iceland</option>
+                                    <option value="IND">India</option>
+                                    <option value="IDN">Indonesia</option>
+                                    <option value="IRN">Iran Islamic Republic of</option>
+                                    <option value="IRQ">Iraq</option>
+                                    <option value="IMN">Isle of Man</option>
+                                    <option value="ISR">Israel</option>
+                                    <option value="JAM">Jamaica</option>
+                                    <option value="JPN">Japan</option>
+                                    <option value="JEY">Jersey</option>
+                                    <option value="JOR">Jordan</option>
+                                    <option value="KAZ">Kazakhstan</option>
+                                    <option value="KEN">Kenya</option>
+                                    <option value="KIR">Kiribati</option>
+                                    <option value="KOR">Korea Democratic Peoples Republic of</option>
+                                    <option value="KOR">Korea Republic of</option>
+                                    <option value="KWT">Kuwait</option>
+                                    <option value="KGZ">Kyrgyzstan</option>
+                                    <option value="LAO">Lao Peoples Democratic Republic</option>
+                                    <option value="LBN">Lebanon</option>
+                                    <option value="LSO">Lesotho</option>
+                                    <option value="LBR">Liberia</option>
+                                    <option value="LBY">Libyan Arab Jamahiriya</option>
+                                    <option value="LIE">Liechtenstein</option>
+                                    <option value="MAC">Macao SAR</option>
+                                    <option value="MKD">Macedonia Former Yugoslav Republic of</option>
+                                    <option value="MDG">Madagascar</option>
+                                    <option value="MWI">Malawi</option>
+                                    <option value="MYS">Malaysia</option>
+                                    <option value="MDV">Maldives</option>
+                                    <option value="MLI">Mali</option>
+                                    <option value="MHL">Marshall Islands</option>
+                                    <option value="MTQ">Martinique</option>
+                                    <option value="MRT">Mauritania</option>
+                                    <option value="MUS">Mauritius</option>
+                                    <option value="MYT">Mayotte</option>
+                                    <option value="MEX">Mexico</option>
+                                    <option value="FSM">Micronesia Federated States of</option>
+                                    <option value="MDA">Moldova Republic of</option>
+                                    <option value="MCO">Monaco</option>
+                                    <option value="MNG">Mongolia</option>
+                                    <option value="MNE">Montenegro</option>
+                                    <option value="MSR">Montserrat</option>
+                                    <option value="MAR">Morocco</option>
+                                    <option value="MOZ">Mozambique</option>
+                                    <option value="MMR">Myanmar</option>
+                                    <option value="NAM">Namibia</option>
+                                    <option value="NRU">Nauru</option>
+                                    <option value="NPL">Nepal</option>
+                                    <option value="ANT">Netherlands Antilles</option>
+                                    <option value="NCL">New Caledonia</option>
+                                    <option value="NZL">New Zealand</option>
+                                    <option value="NIC">Nicaragua</option>
+                                    <option value="NER">Niger</option>
+                                    <option value="NGA">Nigeria</option>
+                                    <option value="NIU">Niue</option>
+                                    <option value="NFK">Norfolk Island</option>
+                                    <option value="MNP">Northern Mariana Islands</option>
+                                    <option value="NOR">Norway</option>
+                                    <option value="OMN">Oman</option>
+                                    <option value="PAK">Pakistan</option>
+                                    <option value="PLW">Palau</option>
+                                    <option value="PSE">Palestinian Territory</option>
+                                    <option value="PAN">Panama</option>
+                                    <option value="PNG">Papua New Guinea</option>
+                                    <option value="PRY">Paraguay</option>
+                                    <option value="PER">Peru</option>
+                                    <option value="PHL">Philippines</option>
+                                    <option value="PCN">Pitcairn</option>
+                                    <option value="PRI">Puerto Rico</option>
+                                    <option value="QAT">Qatar</option>
+                                    <option value="REU">Reunion</option>
+                                    <option value="RUS">Russian Federation</option>
+                                    <option value="RWA">Rwanda</option>
+                                    <option value="BLM">Saint Bartelemey</option>
+                                    <option value="SHN">Saint Helena</option>
+                                    <option value="KNA">Saint Kitts and Nevis</option>
+                                    <option value="LCA">Saint Lucia</option>
+                                    <option value="MAF">Saint Martin</option>
+                                    <option value="SPM">Saint Pierre and Miquelon</option>
+                                    <option value="VCT">Saint Vincent and the Grenadines</option>
+                                    <option value="WSM">Samoa</option>
+                                    <option value="SMR">San Marino</option>
+                                    <option value="STP">Sao Tome and Principe</option>
+                                    <option value="SAU">Saudi Arabia</option>
+                                    <option value="SEN">Senegal</option>
+                                    <option value="SRB">Serbia</option>
+                                    <option value="SYC">Seychelles</option>
+                                    <option value="SLE">Sierra Leone</option>
+                                    <option value="SGP">Singapore</option>
+                                    <option value="SLB">Solomon Islands</option>
+                                    <option value="SOM">Somalia</option>
+                                    <option value="ZAF">South Africa</option>
+                                    <option value="SGS">South Georgia and the South Sandwich Islands</option>
+                                    <option value="LKA">Sri Lanka</option>
+                                    <option value="SDN">Sudan</option>
+                                    <option value="SUR">Suriname</option>
+                                    <option value="SJM">Svalbard and Jan Mayen</option>
+                                    <option value="SWZ">Swaziland</option>
+                                    <option value="CHE">Switzerland</option>
+                                    <option value="SYR">Syrian Arab Republic</option>
+                                    <option value="TWN">Taiwan</option>
+                                    <option value="TJK">Tajikistan</option>
+                                    <option value="TZA">Tanzania United Republic of</option>
+                                    <option value="THA">Thailand</option>
+                                    <option value="TLS">Timor-Leste</option>
+                                    <option value="TGO">Togo</option>
+                                    <option value="TKL">Tokelau</option>
+                                    <option value="TON">Tonga</option>
+                                    <option value="TTO">Trinidad and Tobago</option>
+                                    <option value="TUN">Tunisia</option>
+                                    <option value="TUR">Turkey</option>
+                                    <option value="TKM">Turkmenistan</option>
+                                    <option value="TCA">Turks and Caicos Islands</option>
+                                    <option value="TUV">Tuvalu</option>
+                                    <option value="UGAs">Uganda</option>
+                                    <option value="UGA">Ukraine</option>
+                                    <option value="ARE">United Arab Emirates</option>
+                                    <option value="URY">Uruguay</option>
+                                    <option value="UZB">Uzbekistan</option>
+                                    <option value="VUT">Vanuatu</option>
+                                    <option value="VEN">Venezuela</option>
+                                    <option value="VNM">Vietnam</option>
+                                    <option value="VGB">Virgin Islands British</option>
+                                    <option value="VIR">Virgin Islands US</option>
+                                    <option value="WLF">Wallis and Futuna</option>
+                                    <option value="YEM">Yemen</option>
+                                    <option value="ZMB">Zambia</option>
+                                    <option value="ZEW">Zimbabwe</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row address-lookup" data-address-group="0">
+                        <p
+                            tabindex="1"
+                            class="countryAddressCheck m0"
+                            id="countryAddressCheck0"
+                            data-check-domestic-address="true"
+                            data-domestic-address-checked-label="Can't find your address or outside of Australia?"
+                            data-domestic-address-unchecked-label="Use address lookup service"
+                        >
+                            <span class="help-note">Can't find your address? </span
+                            ><span class="help-link" tabindex="0">Enter it manually</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="form-row international-address non-aus-state m10-bottom hidden"
+                 data-address-group="0">
+                <div class="international-address-wrapper">
+                    <div class="form-textfield form-textfield-floating-label js-form-textfield empty">
+
+                        <input value=""
+                               class="form-textfield-input account-addressstate fullAddressState"
+                               data-val="true"
+                               data-val-required="Please enter postcode"
+                               id="Form_AccountContactDetails_0__AccountAddressStateText"
+                               name="Form.AccountContactDetails[0].AccountAddressStateText"
+                               type="text"
+                               placeholder="State">
+                        <span class="field-validation-valid"
+                              data-valmsg-for="Form.AccountContactDetails[0].AccountAddressStateText"
+                              data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+            </div> -->
+
+    <div class="form-group required-field">
+        <label for="messageInput" class="control-label">Message</label>
+        <textarea
+            id="messageInput"
+            name="message-input-name"
+            class="form-control"
+            rows="4"
+            maxlength="512"
+            placeholder="Write your message..."
+            data-val-required="Message is required."
+            data-val-regex="Message contains potentially dangerous characters. "
+            data-val-regex-pattern="^[^<>{}]*$"
+            data-val="true"
+        ></textarea>
+        <span
+            class="field-validation-valid help-block"
+            data-valmsg-for="message-input-name"
+            data-valmsg-replace="true"
+        ></span>
+    </div>
+    <div class="m10-top btn-container">
+        <button
+            type="submit"
+            class="btn btn-primary blue-dark create-gift m10-bottom disabled hidden"
+            id="createGiftAccount"
+        >
+            Add recipient
+        </button>
+    </div>
+    <div class="m10-top btn-container">
+        <button
+            type="submit"
+            class="btn btn-primary blue-dark create-gift m10-bottom disabled hidden"
+            id="updateGiftAccount"
+        >
+            Update recipient
+        </button>
+    </div>
+</form>
+<!--Gift Section newFarm ends  -->
