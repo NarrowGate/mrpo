@@ -579,25 +579,22 @@
                 </div>
             </div> -->
 
-    <div class="form-group required-field">
-        <label for="messageInput" class="control-label">Message</label>
+    <div class="form-group required-field floating-field">
+        <label for="messageInput" class="control-label">
+            <span class="floating-label">Message</span>
+            <span class="floating-label-error" data-valmsg-for="message-input-name" data-valmsg-replace="true"></span>
+        </label>
         <textarea
             id="messageInput"
             name="message-input-name"
             class="form-control"
             rows="4"
             maxlength="512"
-            placeholder="Write your message..."
-            data-val-required="Message is required."
-            data-val-regex="Message contains potentially dangerous characters. "
+            data-val-required="Message is required"
+            data-val-regex="Message contains potentially dangerous characters"
             data-val-regex-pattern="^[^<>{}]*$"
             data-val="true"
         ></textarea>
-        <span
-            class="field-validation-valid help-block"
-            data-valmsg-for="message-input-name"
-            data-valmsg-replace="true"
-        ></span>
     </div>
     <div class="m10-top btn-container">
         <button
