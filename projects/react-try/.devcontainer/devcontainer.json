@@ -1,0 +1,48 @@
+{
+    "name": "Reack Try Container",
+    "dockerFile": "../Dockerfile",
+    // Use 'settings' to set *default* container specific settings.json values on container create.
+    // You can edit these settings after create using File > Preferences > Settings > Remote.
+    // "settings": {
+    // 	"terminal.integrated.shell.linux": "/bin/bash",
+    // 	"vetur.completion.autoImport": false
+    // },
+
+    // Uncomment the next line if you want to publish any ports.
+    "appPort": ["7030:5173"],
+
+    // Uncomment the next line to run commands after the container is created.
+    // "postCreateCommand": "yarn install",
+
+    // Uncomment the next line to use a non-root user. On Linux, this will prevent
+    // new files getting created as root, but you may need to update the USER_UID
+    // and USER_GID in .devcontainer/Dockerfile to match your user if not 1000.
+    // "runArgs": ["-u", "node"],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "esbenp.prettier-vscode",
+                "donjayamanne.githistory",
+                "oderwat.indent-rainbow",
+                "NicholasHsiang.vscode-javascript-snippet",
+                "github.copilot",
+                "teabyii.ayu",
+                "sdras.inbedby7pm",
+                "mvllow.rose-pine",
+                "wicked-labs.wvsc-serendipity",
+                "fisheva.eva-theme",
+                "vscodevim.vim"
+            ]
+        }
+    },
+    // "workspaceMount": "source=${localWorkspaceFolder},target=/home/node/mw,type=bind",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/home/node/mw/project,type=bind",
+        // "source=${localEnv:HOME}/Documents/repos/mrpo/projects/simple-vue,target=/home/node/mw/project,type=bind",
+        "source=${localEnv:HOME}/Documents/repos/mrpo/packages/package-b,target=/home/node/mw/packages,type=bind",
+        "source=${localEnv:HOME}/Documents/repos/mrpo/.vscode,target=/home/node/mw/.vscode,type=bind",
+        "source=${localEnv:HOME}/Documents/repos/mrpo/.prettierrc,target=/home/node/mw/.prettierrc,type=bind"
+    ],
+    // "source=${locaEnv:HOME}/Documents/repos/mrpo/packages,target=/home/node/mw,type=bind"
+    "workspaceFolder": "/home/node/mw"
+}
