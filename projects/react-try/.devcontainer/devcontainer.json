@@ -1,5 +1,5 @@
 {
-    "name": "Reack Try Container",
+    "name": "React",
     "dockerFile": "../Dockerfile",
     // Use 'settings' to set *default* container specific settings.json values on container create.
     // You can edit these settings after create using File > Preferences > Settings > Remote.
@@ -37,12 +37,11 @@
     },
     // "workspaceMount": "source=${localWorkspaceFolder},target=/home/node/mw,type=bind",
     "mounts": [
-        "source=${localWorkspaceFolder},target=/home/node/mw/project,type=bind",
+        "source=${localWorkspaceFolder},target=/home/node/mw/react,type=bind",
         // "source=${localEnv:HOME}/Documents/repos/mrpo/projects/simple-vue,target=/home/node/mw/project,type=bind",
-        "source=${localEnv:HOME}/Documents/repos/mrpo/packages/package-b,target=/home/node/mw/packages,type=bind",
-        "source=${localEnv:HOME}/Documents/repos/mrpo/.vscode,target=/home/node/mw/.vscode,type=bind",
-        "source=${localEnv:HOME}/Documents/repos/mrpo/.prettierrc,target=/home/node/mw/.prettierrc,type=bind"
+        "source=${localEnv:HOME}/Documents/repos/mrpo/.vscode,target=/home/node/mw/react/.vscode,type=bind",
+        "source=${localEnv:HOME}/Documents/repos/mrpo/.prettierrc,target=/home/node/mw/react/.prettierrc,type=bind"
     ],
     // "source=${locaEnv:HOME}/Documents/repos/mrpo/packages,target=/home/node/mw,type=bind"
-    "workspaceFolder": "/home/node/mw"
+    "workspaceFolder": "/home/node/mw/react"
 }
