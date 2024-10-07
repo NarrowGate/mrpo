@@ -11,7 +11,7 @@ import HelloWorld from './components/HelloWorld.vue'
             <img src="./assets/vue.svg" class="logo vue" alt="Vue logssso" />
         </a>
     </div>
-    <HelloWorld msg="Besdf sdflt" />
+    <HelloWorld msg="Besdf " />
 </template>
 
 <style scoped>

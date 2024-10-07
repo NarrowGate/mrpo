@@ -32,7 +32,8 @@
                 "wicked-labs.wvsc-serendipity",
                 "fisheva.eva-theme",
                 "sdras.night-owl",
-                "vscodevim.vim"
+                "vscodevim.vim",
+                "dsznajder.es7-react-js-snippets"
             ]
         }
     },
