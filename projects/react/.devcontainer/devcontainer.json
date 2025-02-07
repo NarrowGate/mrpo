@@ -36,7 +36,8 @@
                 "enkia.tokyo-night",
                 "formulahendry.auto-rename-tag",
                 "dsznajder.es7-react-js-snippets",
-                "wix.glean"
+                "wix.glean",
+                "eamodio.gitlens"
             ]
         }
     },
