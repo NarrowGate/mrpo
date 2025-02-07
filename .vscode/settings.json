@@ -10,13 +10,72 @@
             "commands": ["workbench.action.toggleZenMode"]
         },
         {
-            "before": ["<leader>", "s", "t"],
-            "commands": ["workbench.action.toggleSidebarVisibility"]
+            "before": ["x"],
+            "commands": ["workbench.action.closeActiveEditor"],
+            "when": "editorTextFocus"
         },
         {
-            "before": ["<leader>", "s", "x"],
-            "commands": ["workbench.view.extensions"]
+            "before": ["J"],
+            "commands": ["workbench.action.previousEditor"],
+            "when": "editorTextFocus"
         },
+        {
+            "before": ["K"],
+            "commands": ["workbench.action.nextEditor"],
+            "when": "editorTextFocus"
+        },
+        // Code
+        {
+            "before": ["<leader>", "c", "f"],
+            "commands": ["editor.fold"],
+            "when": "editorTextFocus"
+        },
+        {
+            "before": ["<leader>", "c", "u"],
+            "commands": ["editor.unfold"],
+            "when": "editorTextFocus"
+        },
+        // Files
+        {
+            "before": ["<leader>", "f", "f"],
+            "commands": ["workbench.action.files.openFolder"]
+        },
+        {
+            "before": ["<leader>", "f", "o"],
+            "commands": ["workbench.action.files.openFile"]
+        },
+        // Github Copilot
+        {
+            "before": ["<leader>", "q", "o"],
+            "commands": ["workbench.action.quickchat.toggle"]
+        },
+        // Group
+        {
+            "before": ["<leader>", "g", "w"],
+            "commands": ["workbench.action.closeEditorsInGroup"]
+        },
+        {
+            "before": ["<leader>", "g", "<Left>"],
+            "commands": ["workbench.action.moveEditorToPreviousGroup"]
+        },
+        {
+            "before": ["<leader>", "g", "<Right>"],
+            "commands": ["workbench.action.moveEditorToNextGroup"]
+        },
+        // Remote
+        {
+            "before": ["<leader>", "r", "c", "o"],
+            "commands": ["remote-containers.rebuildNoCacheAndReopenInContainer"]
+        },
+        {
+            "before": ["<leader>", "r", "o"],
+            "commands": ["remote-containers.rebuildAndReopenInContainer"]
+        },
+        {
+            "before": ["<leader>", "r", "r"],
+            "commands": ["remote-containers.reopenInContainer"]
+        },
+        // Sidebar
         {
             "before": ["<leader>", "s", "e"],
             "commands": ["workbench.view.explorer"]
@@ -26,77 +85,20 @@
             "commands": ["workbench.view.search"]
         },
         {
-            "before": ["<leader>", "s", "s"],
-            "commands": ["workbench.view.scm"]
-        },
-        {
             "before": ["<leader>", "s", "g"],
             "commands": ["workbench.panel.chat.view.copilot.focus"]
         },
         {
-            "before": ["<leader>", "f"],
-            "after": ["<C-f>"]
+            "before": ["<leader>", "s", "s"],
+            "commands": ["workbench.view.scm"]
         },
         {
-            "before": ["<leader>", "b"],
-            "after": ["<C-b>"]
+            "before": ["<leader>", "s", "t"],
+            "commands": ["workbench.action.toggleSidebarVisibility"]
         },
         {
-            "before": ["<leader>", "o"],
-            "after": ["<C-o>"]
-        },
-        {
-            "before": ["<leader>", "i"],
-            "after": ["<C-i>"]
-        },
-        {
-            "before": ["<leader>", "r"],
-            "after": ["<C-r>"]
-        },
-        {
-            "before": ["<leader>", "q"],
-            "commands": ["workbench.action.closeActiveEditor"],
-            "when": "editorTextFocus"
-        },
-        {
-            "before": ["[", "b"],
-            "commands": ["workbench.action.previousEditor"],
-            "when": "editorTextFocus"
-        },
-        {
-            "before": ["]", "b"],
-            "commands": ["workbench.action.nextEditor"],
-            "when": "editorTextFocus"
-        },
-        {
-            "before": ["<leader>", "h"],
-            "commands": ["workbench.action.navigateLeft"],
-            "when": "editorTextFocus"
-        },
-        {
-            "before": ["<leader>", "j"],
-            "commands": ["workbench.action.navigateDown"],
-            "when": "editorTextFocus"
-        },
-        {
-            "before": ["<leader>", "l"],
-            "commands": ["workbench.action.navigateRight"],
-            "when": "editorTextFocus"
-        },
-        {
-            "before": ["<leader>", "c"],
-            "commands": ["editor.action.commentLine"],
-            "when": "editorTextFocus"
-        },
-        {
-            "before": ["<leader>", "k"],
-            "commands": ["workbench.action.openQuickChat.copilot"],
-            "when": "editorTextFocus"
-        },
-        {
-            "before": ["<leader>", "|"],
-            "commands": ["workbench.action.splitEditorRight"],
-            "when": "editorTextFocus"
+            "before": ["<leader>", "s", "x"],
+            "commands": ["workbench.view.extensions"]
         }
     ],
     "vim.visualModeKeyBindings": [
