@@ -11,6 +11,7 @@
         "wicked-labs.wvsc-serendipity",
         "sdras.night-owl",
         "fisheva.eva-theme",
-        "vscodevim.vim"
+        "vscodevim.vim",
+        "mhutchie.git-graph"
     ]
 }
