@@ -1,23 +1,10 @@
 {
     "name": "React",
     "dockerFile": "../Dockerfile",
-    // Use 'settings' to set *default* container specific settings.json values on container create.
-    // You can edit these settings after create using File > Preferences > Settings > Remote.
-    // "settings": {
-    // 	"terminal.integrated.shell.linux": "/bin/bash",
-    // 	"vetur.completion.autoImport": false
-    // },
 
     // Uncomment the next line if you want to publish any ports.
     "appPort": ["4030:5173"],
 
-    // Uncomment the next line to run commands after the container is created.
-    // "postCreateCommand": "yarn install",
-
-    // Uncomment the next line to use a non-root user. On Linux, this will prevent
-    // new files getting created as root, but you may need to update the USER_UID
-    // and USER_GID in .devcontainer/Dockerfile to match your user if not 1000.
-    // "runArgs": ["-u", "node"],
     "customizations": {
         "vscode": {
             "extensions": [
@@ -49,5 +36,6 @@
         "source=${localEnv:HOME}/Documents/repos/mrpo/.prettierrc,target=/home/node/mw/react/.prettierrc,type=bind"
     ],
     // "source=${locaEnv:HOME}/Documents/repos/mrpo/packages,target=/home/node/mw,type=bind"
-    "workspaceFolder": "/home/node/mw/react"
+    "workspaceFolder": "/home/node/mw/react",
+    "postCreateCommand": "npm install"
 }
