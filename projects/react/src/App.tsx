@@ -10,7 +10,7 @@ import Login from './Pages/Login'
 function App() {
     const [user, setUser] = useState(null)
 
-    return <>{user === null ? <Login /> : <Home />}</>
+    return <div className='md:container md:mx-auto'>{user === null ? <Login /> : <Home />}</div>
 }
 
 export default App
