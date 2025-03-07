@@ -24,7 +24,8 @@
                 "formulahendry.auto-rename-tag",
                 "dsznajder.es7-react-js-snippets",
                 "wix.glean",
-                "eamodio.gitlens"
+                "eamodio.gitlens",
+                "bradlc.vscode-tailwindcss"
             ]
         }
     },
