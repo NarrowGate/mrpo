@@ -2,13 +2,15 @@ import * as React from 'react'
 import { RotatingLines } from 'react-loader-spinner'
 
 const fetchData = async ({ query = '', page = 0, tag = '' }) => {
-    return fetch(`https://hn.algolia.com/api/v1/search?query=${query}&tags=${encodeURIComponent(tag)}&page=${page}`)
-        .then((response) => response.json())
-        .then((json) => ({
-            results: json.hits || [],
-            pages: json.nbPages || 0,
-            resultsPerPage: json.hitsPerPage || 20
-        }))
+    let response = await fetch(
+        `https://hn.algolia.com/api/v1/search?query=${query}&tags=${encodeURIComponent(tag)}&page=${page}`
+    )
+    let json = await response.json()
+    return {
+        results: json.hits || [],
+        pages: json.nbPages || 0,
+        resultsPerPage: json.hitsPerPage || 20
+    }
 }
 
 export default function HackerNewsSearch() {
@@ -23,6 +25,10 @@ export default function HackerNewsSearch() {
     const handleSearch = async (e) => {
         setQuery(e.target.value)
         setPage(0)
+        doSearch()
+    }
+
+    const doSearch = async () => {
         setLoading(true)
         const { results: r, pages: p, resultsPerPage: rperpage } = await fetchData({ query, page, tag })
         setLoading(false)
@@ -43,8 +49,9 @@ export default function HackerNewsSearch() {
     const handlePrevPage = () => {
         setPage(page - 1)
     }
-    React.useEffect(() => {
-        fetchData({ query, page, tag })
+
+    React.useEffect(async () => {
+        doSearch()
     }, [query])
 
     return (
@@ -99,7 +106,7 @@ export default function HackerNewsSearch() {
 
                         return (
                             <li key={objectID}>
-                                <span>{title}.</span>
+                                <span>{index + 1}.</span>
                                 <a href={href} target='_blank' rel='noreferrer'>
                                     {title}
                                 </a>
