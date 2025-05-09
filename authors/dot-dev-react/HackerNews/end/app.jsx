@@ -2,15 +2,13 @@ import * as React from 'react'
 import { RotatingLines } from 'react-loader-spinner'
 
 const fetchData = async ({ query = '', page = 0, tag = '' }) => {
-    let response = await fetch(
-        `https://hn.algolia.com/api/v1/search?query=${query}&tags=${encodeURIComponent(tag)}&page=${page}`
-    )
-    let json = await response.json()
-    return {
-        results: json.hits || [],
-        pages: json.nbPages || 0,
-        resultsPerPage: json.hitsPerPage || 20
-    }
+    return fetch(`https://hn.algolia.com/api/v1/search?query=${query}&tags=${encodeURIComponent(tag)}&page=${page}`)
+        .then((response) => response.json())
+        .then((json) => ({
+            results: json.hits || [],
+            pages: json.nbPages || 0,
+            resultsPerPage: json.hitsPerPage || 20
+        }))
 }
 
 export default function HackerNewsSearch() {
@@ -22,19 +20,9 @@ export default function HackerNewsSearch() {
     const [totalPages, setTotalPages] = React.useState(50)
     const [loading, setLoading] = React.useState(false)
 
-    const handleSearch = async (e) => {
+    const handleSearch = (e) => {
         setQuery(e.target.value)
         setPage(0)
-        doSearch()
-    }
-
-    const doSearch = async () => {
-        setLoading(true)
-        const { results: r, pages: p, resultsPerPage: rperpage } = await fetchData({ query, page, tag })
-        setLoading(false)
-        setResults(r)
-        setTotalPages(p)
-        setResultsPerPage(rperpage)
     }
 
     const handleTag = (e) => {
@@ -49,10 +37,25 @@ export default function HackerNewsSearch() {
     const handlePrevPage = () => {
         setPage(page - 1)
     }
-
-    React.useEffect(async () => {
-        doSearch()
-    }, [query])
+    React.useEffect(() => {
+        let ignore = false
+        let handleSearch = async () => {
+            setLoading(true)
+            setResults([])
+            const { results, pages, resultsPerPage } = await fetchData({ query, page, tag })
+            if (ignore === true) {
+                return
+            }
+            setLoading(false)
+            setResults(results)
+            setResultsPerPage(resultsPerPage)
+            setTotalPages(pages)
+        }
+        handleSearch()
+        return () => {
+            ignore = true
+        }
+    }, [query, tag, page])
 
     return (
         <main>
@@ -82,7 +85,7 @@ export default function HackerNewsSearch() {
             <section>
                 <header>
                     <h2>
-                        <span>No Results OR Page TODO of TODO</span>
+                        <span>{results.length ? `Page ${page + 1} of ${totalPages}` : 'No Results'} </span>
                         <RotatingLines
                             strokeColor='grey'
                             strokeWidth='5'
@@ -92,10 +95,10 @@ export default function HackerNewsSearch() {
                         />
                     </h2>
                     <div>
-                        <button className='link' onClick={null} disabled={null}>
+                        <button className='link' onClick={handlePrevPage} disabled={page === 0}>
                             Previous
                         </button>
-                        <button className='link' onClick={null} disabled={null}>
+                        <button className='link' onClick={handleNextPage} disabled={page + 1 >= totalPages}>
                             Next
                         </button>
                     </div>
@@ -106,7 +109,7 @@ export default function HackerNewsSearch() {
 
                         return (
                             <li key={objectID}>
-                                <span>{index + 1}.</span>
+                                <span>{page * resultsPerPage + index + 1}.</span>
                                 <a href={href} target='_blank' rel='noreferrer'>
                                     {title}
                                 </a>
