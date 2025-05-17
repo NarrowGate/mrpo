@@ -4,6 +4,7 @@ export default function VideoPlayer() {
     const [isPlaying, setIsPlaying] = React.useState(false)
     const videoRef = React.useRef(null)
 
+    // Interesting alternative in Solution
     if (videoRef.current) {
         if (isPlaying) {
             videoRef.current.play()
