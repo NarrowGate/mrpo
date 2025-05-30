@@ -5,3 +5,5 @@ cd authors/dot-dev-react && mkdir {name} && cd {name} && mkdir start end solutio
 
 More Scalable
 name={folderName} && cd authors/dot-dev-react && mkdir "$name" && cd "$name" && mkdir start end solution && touch start/app.jsx end/app.jsx solution/app.jsx
+
+name=clickOutside && cd authors/dot-dev-react && mkdir "$name" && cd "$name" && mkdir start end solution && touch start/app.jsx end/app.jsx solution/app.jsx
